@@ -1,0 +1,19 @@
+{"curve": [0, 1, 1, -2, 0], "p": 107, "r": 2, "pari": "(2, 17, 2)", "N": 389, "ap": 0, "c_inf": 2, "tamagawa": 1, "torsion": 1, "scale_checks": [[5, "1.00000000000000"], [13, "1.00000000000000"], [17, "1.00000000000000"]], "scale_xplus_over_phi": "1", "scale_used": "1/2", "sec_setup": 0.1, "cplus_modp": [0, 0, 64, 30], "sec_level2": 0.2, "cminus_modp": [0, 0, 38, 97], "theta3_low_coeffs_vanish": true, "sec_level3": 19.2, "Reg_gamma_omF_mine_col": ["43 + 38*107 + 57*107^2 + 91*107^3 + 14*107^4 + O(107^6)", "59 + 61*107 + 53*107^2 + 95*107^3 + 93*107^4 + O(107^5)"], "Reg_gamma_omF_mine_row": ["43 + 34*107 + 73*107^2 + 93*107^3 + 99*107^4 + 12*107^5 + O(107^6)", "29*107 + 14*107^2 + 11*107^4 + 44*107^5 + O(107^6)"], "Reg_gamma_omF_ellpadicregulator": ["43 + 38*107 + 57*107^2 + 91*107^3 + 14*107^4 + O(107^6)", "59 + 61*107 + 53*107^2 + 95*107^3 + 93*107^4 + O(107^5)"], "regulator_assembly_agrees_with_ellpadicregulator(col)": true, "v_Reg_gamma_omF": [0, 0], "v_Reg_gamma_omega_eta": [0, 1], "main": {"S_[.,Fomega]_first_coord": 1, "S_[.,omega]_second_coord(PR)": 1, "S_[.,eta]_omega_coord_in_(omega,eta)": 1, "lead_omF_modp": [43, 59]}, "red_flip_sign_of_H": {"S_[.,Fomega]_first_coord": 1, "S_[.,omega]_second_coord(PR)": 65, "S_[.,eta]_omega_coord_in_(omega,eta)": 1, "lead_omF_modp": [43, 90]}, "S_modp": 1, "red_nonsaturated_v_Reg": [2, 2], "verdict": "PASS: S unit, all functionals agree -> Sha(p) = 0 (given Kato+PR+Pollack)", "sec_total": 19.6}
+       19.66 real        17.22 user         0.13 sys
+           547799040  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               38153  page reclaims
+                   3  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  10  voluntary context switches
+                3746  involuntary context switches
+        292790575627  instructions retired
+         60415955967  cycles elapsed
+           529466160  peak memory footprint

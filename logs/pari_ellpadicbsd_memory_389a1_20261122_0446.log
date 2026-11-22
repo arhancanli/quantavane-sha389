@@ -1,0 +1,10 @@
+11 2 -4 r=2 1.1s 369 MB
+13 2 -3 r=2 1.5s 505 MB
+17 2 -6 r=2 2.6s 884 MB
+19 2 5 r=2 4.0s 1078 MB
+23 2 -4 r=2 5.0s 1625 MB
+29 2 -6 ERR the PARI stack overflows (current size: 1700003840; maximum  6.1s 1692 MB
+31 2 4 ERR the PARI stack overflows (current size: 1700003840; maximum  5.5s 1689 MB
+37 2 -8 ERR the PARI stack overflows (current size: 1700003840; maximum  7.7s 1695 MB
+41 2 -3 ERR the PARI stack overflows (current size: 1700003840; maximum  9.9s 1581 MB
+END Sun Nov 22 04:47:30 +04 2026

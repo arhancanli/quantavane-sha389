@@ -1,0 +1,4 @@
+START Sun Nov 22 04:52:50 +04 2026
+{"curve": [0, 1, 1, -2, 0], "N": 389, "p": 107, "cplus_mod_p": [0, 0, 21, 60], "cminus_mod_p": [0, 0, 76, 87], "sec_symbols": 16.6, "lead_digits_omega_Fomega": [86, 11], "Reg_gamma": ["43 + 38*107 + 57*107^2 + 91*107^3 + O(107^4)", "59 + 61*107 + 53*107^2 + O(107^3)"], "v_Reg_gamma": [0, 0], "S_mod_p": 2, "consistency_second_coord": true, "sec_total": 16.6}
+       16.80 real        11.32 user         0.04 sys
+END Sun Nov 22 04:53:07 +04 2026
