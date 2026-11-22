@@ -1,11 +1,11 @@
 """Saturation of the basis P1 = (-1,1), P2 = (0,0) of 389a1 at every prime up to a bound (PARI ellsaturation), plus
 rank bounds (ellrank), torsion, Tamagawa numbers and the reduction type at 389. A regulator computed on a basis that is
 not saturated at p would carry extra powers of p (see the red controls in the programs).
-Usage: python -I saturation.py [bound=12000]"""
+Usage: python -I saturation.py [bound=15000]"""
 import sys, json, time
 import cypari2
 pari = cypari2.Pari(size=2 * 10**8, sizemax=1_200_000_000)
-B = int(sys.argv[1]) if len(sys.argv) > 1 else 12000
+B = int(sys.argv[1]) if len(sys.argv) > 1 else 15000
 E = pari.ellinit([0, 1, 1, -2, 0])
 P = [[-1, 1], [0, 0]]
 t0 = time.time()

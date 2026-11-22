@@ -1,4 +1,4 @@
-# Sha(389a1)[p^∞] = 0 for every prime p < 6661
+# Sha(389a1)[p^∞] = 0 for every prime p < 14,633
 
 **Status: a Tier 5 verification (computational; the lowest step of our five-step scale). It does not show that Sha is
 finite, and it is not yet peer reviewed. Verified by two independently written programs and an internal referee.**
@@ -9,15 +9,15 @@ Author: Arhan Canli (Quantavane, arhan@quantavane.com). On the use of AI, see
 ## The statement
 
 Let E be the elliptic curve 389a1, y² + y = x³ + x² − 2x, of conductor 389 and rank 2, with E(Q) = Z(−1, 1) ⊕ Z(0, 0).
-The primes p < 6661 at which E has supersingular reduction are 107, 599, 1049 and 2957; E has split multiplicative
+The primes p < 14,633 at which E has supersingular reduction are 107, 599, 1049, 2957, 6661, 8263, 9397 and 9551; E has split multiplicative
 reduction at its only bad prime, 389.
 
-**Statement.** Sha(E/Q)[p^∞] = 0 for p = 107, 599, 1049, 2957 and 389.
+**Statement.** Sha(E/Q)[p^∞] = 0 for p = 107, 599, 1049, 2957, 6661, 8263, 9397, 9551 and 389.
 
 Together with Stein and Wuthrich's Theorem 12.3 (Math. Comp. 82 (2013), 1757–1792: Sha(E/Q)[p] = 0 for p = 2 and every
 good ordinary prime p < 48,859 except 16,231), this gives:
 
-**Sha(389a1)[p^∞] = 0 for every prime p < 6661.**
+**Sha(389a1)[p^∞] = 0 for every prime p < 14,633.**
 
 Stein and Wuthrich left out exactly the supersingular primes (their Remark 12.5: "not because our algorithms do not
 apply (they do apply), but because our implementations are significantly slower in this case"), the bad prime 389 and
@@ -26,7 +26,7 @@ primes" and "verify that Sha(389a)[16,231] = 0" as future work.
 
 ## What this is and what it is not
 
-- It is a finite computation that, combined with published theorems (listed below), proves the statement for four
+- It is a finite computation that, combined with published theorems (listed below), proves the statement for eight
   primes. The method is Stein and Wuthrich's Algorithm 11.1 in the supersingular case, fed by Pollack's ± p-adic
   L-functions computed from Mazur–Tate elements, and at p = 389 their split-multiplicative case (exceptional zero,
   L-invariant, Schneider's height). Nothing in the method is new.
@@ -47,6 +47,10 @@ modular symbols by Ω⁺ (so it expects S = c_∞ · #Sha = 2); program B normal
 | 599 | 0, 0, 56, 383 | 571, 416 | 2 | 1 | consistent (c⁻ from level p³) |
 | 1049 | 0, 0, 847, 972 | 101, 761 | 2 | 1 | not computed |
 | 2957 | 0, 0, 2547, 2802 | 205, 698 | 2 | 1 | not computed |
+| 6661 | 0, 0, 3666, 3665 | 4828, 705 | 2 | 1 | not computed |
+| 8263 | 0, 0, 3529, 6834 | 2367, 640 | 2 | 1 | not computed |
+| 9397 | 0, 0, 6604, 2356 | 6095, 204 | 2 | 1 | not computed |
+| 9551 | 0, 0, 2258, 968 | 8422, 3323 | 2 | 1 | not computed |
 
 In every case S equals what the p-adic Birch–Swinnerton-Dyer formula predicts for #Sha = 1, which is a stronger check
 than "S is a unit". Logs: `logs/supersingular/`.
@@ -119,6 +123,7 @@ Needs Python 3 with [cypari2](https://github.com/sagemath/cypari2) (PARI/GP 2.15
 
     PY=python3 zsh run_checks.sh            # p = 107 and p = 389 with both programs, every control (~1 minute)
     FULL=1 PY=python3 zsh run_checks.sh     # adds p = 599, 1049, 2957 (~10 more minutes)
+    FULL=2 PY=python3 zsh run_checks.sh     # as FULL=1, plus 6661, 8263, 9397, 9551 (about 2 more hours)
 
 Each run writes its logs to `out/` and ends with `checks/verify.py`, which prints one PASS/FAIL line per check.
 
@@ -141,8 +146,8 @@ is due to Schneider, Perrin-Riou and J. W. Jones (Duke Math. J. 59 (1989)). The 
 ## Not yet done
 
 - Outside review: none yet. W. Stein and C. Wuthrich were told of this check before this repository was made public.
-- More primes: the supersingular primes 6661, 8263, 9397, 9551 and the nine between 14,633 and 45,161 are being run with
-  both programs; the ordinary prime 16,231 (where ord_p Reg_p = 3) needs another route (overconvergent modular
+- More primes: the nine supersingular primes between 14,633 and 45,161 are being run with both programs; the ordinary
+  prime 16,231 (where ord_p Reg_p = 3) needs another route (overconvergent modular
   symbols, as Stein and Wuthrich suggest in their Remark 12.4).
 - Lean: this is out of Lean's reach for now (the inputs are deep theorems in Iwasawa theory, not finite statements).
 
@@ -158,5 +163,5 @@ repository. Every number here can be re-checked with `run_checks.sh`.
 ## Licence and citation
 
 The text is under CC BY 4.0 (`LICENSE`); the programs are under the MIT licence (`LICENSE-CODE`). Please cite as:
-Arhan Canli, *Sha(389a1)[p^∞] = 0 for every prime p < 6661*,
+Arhan Canli, *Sha(389a1)[p^∞] = 0 for every prime p < 14,633*,
 https://github.com/arhancanli/quantavane-sha389 (2026), together with Stein and Wuthrich (Math. Comp. 2013).

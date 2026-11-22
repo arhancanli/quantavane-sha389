@@ -20,10 +20,10 @@ def check(label, ok):
 
 
 txt = load("primes")
-check("supersingular primes of 389a1 below 9600 are 107, 599, 1049, 2957, 6661, 8263, 9397, 9551",
-      isinstance(txt, str) and "[107, 599, 1049, 2957, 6661, 8263, 9397, 9551]" in txt)
+check("supersingular primes of 389a1 below 14700 are 107, 599, 1049, 2957, 6661, 8263, 9397, 9551, 14633",
+      isinstance(txt, str) and "[107, 599, 1049, 2957, 6661, 8263, 9397, 9551, 14633]" in txt)
 s = load("saturation")
-check("basis (-1,1), (0,0) saturated at every prime <= 12000; rank 2; torsion 1; Tamagawa 1; a_389 = 1",
+check("basis (-1,1), (0,0) saturated at every prime <= 15000; rank 2; torsion 1; Tamagawa 1; a_389 = 1",
       s["index_squared"] == "1" and s["rank_bounds"] == "[2, 2]" and s["torsion"] == 1 and s["tamagawa_product"] == 1
       and s["a_389"] == 1)
 t = load("sw122_pari")
@@ -83,7 +83,7 @@ check("program B (split), 389a1 p = 389: S = 1 (Omega_E) and the conclusion Sha[
 for name in ("B_red_p389_scaled_by_p", "B_red_p389_nonsaturated"):
     b = loadB(name)
     check(f"program B red control {name}: no conclusion", b is not None and b["conclusion"] == "NO CONCLUSION")
-for p in (599, 1049, 2957):
+for p in (599, 1049, 2957, 6661, 8263, 9397, 9551):
     a, b = load(f"A_389a1_p{p}"), load(f"B_389a1_p{p}")
     if a is None and b is None:
         continue

@@ -3,13 +3,14 @@
 # values (checks/verify.py). Needs Python 3 with cypari2 (PARI/GP >= 2.15; tested with 2.15.4 and 2.17.2).
 #   PY=/path/to/python zsh run_checks.sh          quick: p = 107 with both programs, all controls (about 2 minutes)
 #   FULL=1 PY=/path/to/python zsh run_checks.sh   adds p = 599, 1049, 2957 with both programs (about 10 more minutes)
+#   FULL=2 PY=/path/to/python zsh run_checks.sh   adds also 6661, 8263, 9397, 9551 (about 2 more hours, one job at a time)
 PY=${PY:-python3}
 cd "$(dirname "$0")"
 O=out/$(date +%Y%m%d_%H%M%S); mkdir -p $O
 "$PY" -I -c "import cypari2" || { echo "cypari2 not importable by $PY"; exit 1; }
 run() { local name=$1; shift; echo "running $name"; "$@" 2>&1 | grep -v Warning > $O/$name.log; }
-run primes        "$PY" -I checks/supersingular_primes.py 9600
-run saturation    "$PY" -I checks/saturation.py 12000
+run primes        "$PY" -I checks/supersingular_primes.py 14700
+run saturation    "$PY" -I checks/saturation.py 15000
 run sw122_pari    "$PY" -I checks/control_1483a1.py
 run A_1483a1_p5   "$PY" -I programs/pm_route.py 0,1,1,2,2 5 reg "-1,0;0,1"
 run A_11a1_p19    "$PY" -I programs/pm_route.py 0,-1,1,-10,-20 19
@@ -28,8 +29,9 @@ run B_446d1_p223  "$PY" -I programs/ref_split.py 1,-1,0,-4,4 223 "2,0;1,0"
 run B_389a1_p389  "$PY" -I programs/ref_split.py 0,1,1,-2,0 389 "-1,1;0,0"
 run B_red_p389_scaled_by_p   "$PY" -I programs/ref_split.py 0,1,1,-2,0 389 "-1,1;0,0" scale=389
 run B_red_p389_nonsaturated  "$PY" -I programs/ref_split.py 0,1,1,-2,0 389 "-1,1;0,0" "basisA=389,0;0,1"
-if [ "$FULL" = 1 ]; then
-  for P in 599 1049 2957; do
+if [ -n "$FULL" ]; then
+  PRIMES="599 1049 2957"; [ "$FULL" = 2 ] && PRIMES="$PRIMES 6661 8263 9397 9551"
+  for P in ${=PRIMES}; do
     run A_389a1_p$P env PM_SKIP3=1 "$PY" -I programs/pm_route.py 0,1,1,-2,0 $P reg "-1,1;0,0"
     run B_389a1_p$P "$PY" -I programs/ref_m2ss.py 0,1,1,-2,0 $P 2 "-1,1;0,0" 2
   done
