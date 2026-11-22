@@ -18,6 +18,16 @@ run B_1483a1_p5   "$PY" -I programs/ref_m2ss.py 0,1,1,2,2 5 2 "-1,0;0,1"
 run B_11a1_p19    "$PY" -I programs/ref_m2ss.py 0,-1,1,-10,-20 19 0 ""
 run B_389a1_p107  "$PY" -I programs/ref_m2ss.py 0,1,1,-2,0 107 2 "-1,1;0,0"
 run B_red_p107_scaled_by_p "$PY" -I programs/ref_m2ss.py 0,1,1,-2,0 107 2 "-1,1;0,0" 2 107
+# p = 389 (split multiplicative): program A (split_mult.py), program B (ref_split.py), Stein-Wuthrich 12.1 and 91b1 controls
+run sw121_pari    "$PY" -I checks/sw121_pari.py
+run A_446d1_p223  "$PY" -I programs/split_mult.py 1,-1,0,-4,4 223 2 "2,0;1,0"
+run A_91b1_p7     "$PY" -I programs/split_mult.py 0,1,1,-7,5 7 4 "-1,3"
+run ctrl_91b1     "$PY" -I checks/ctrl_91b1.py
+run A_389a1_p389  "$PY" -I programs/split_mult.py 0,1,1,-2,0 389 2 "-1,1;0,0"
+run B_446d1_p223  "$PY" -I programs/ref_split.py 1,-1,0,-4,4 223 "2,0;1,0"
+run B_389a1_p389  "$PY" -I programs/ref_split.py 0,1,1,-2,0 389 "-1,1;0,0"
+run B_red_p389_scaled_by_p   "$PY" -I programs/ref_split.py 0,1,1,-2,0 389 "-1,1;0,0" scale=389
+run B_red_p389_nonsaturated  "$PY" -I programs/ref_split.py 0,1,1,-2,0 389 "-1,1;0,0" "basisA=389,0;0,1"
 if [ "$FULL" = 1 ]; then
   for P in 599 1049 2957; do
     run A_389a1_p$P env PM_SKIP3=1 "$PY" -I programs/pm_route.py 0,1,1,-2,0 $P reg "-1,1;0,0"

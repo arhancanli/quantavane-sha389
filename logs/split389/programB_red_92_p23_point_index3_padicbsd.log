@@ -1,0 +1,1 @@
+{"curve": [0, 0, 0, -1, 1], "p": 23, "n": 5, "ellpadicbsd_r": 2, "ellpadicbsd_Lp": "13*23 + 9*23^2 + 10*23^3 + O(23^4)", "mine_R_times_Sha": "13*23 + 9*23^2 + 10*23^3 + O(23^4)", "ratio_pari_over_mine": "1 + O(23^3)", "Sha_estimate_pari": "18 + 12*23 + 2*23^2 + O(23^3)", "Sha_estimate_mine": "18 + 12*23 + 2*23^2 + O(23^3)"}

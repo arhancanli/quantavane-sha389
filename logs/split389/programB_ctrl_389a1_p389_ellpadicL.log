@@ -1,0 +1,3 @@
+{"p": 389, "n": 2, "ellpadicL_r3": "O(389^2)", "sec_L3": 7.7, "ratio_ellpadicL3_over_6_c3SW_lg3": "O(389^-1)", "ellpadicL_r0": "O(389^2)", "ellpadicL_r1": "O(389^2)", "ellpadicL_r2": "O(389^2)"}
+  ***   Warning: increasing stack size to 1600000000.
+{"p": 389, "n": 2, "ellpadicL_r3": "O(389^2)", "sec_L3": 7.7, "ratio_ellpadicL3_over_6_c3SW_lg3": "O(389^-1)", "ellpadicL_r0": "O(389^2)", "ellpadicL_r1": "O(389^2)", "ellpadicL_r2": "O(389^2)", "ellpadicbsd_r": 3, "ellpadicbsd_Lp": "232*389^2 + 160*389^3 + O(389^4)", "sec_bsd": 13.9, "ellpadicbsd_Lp_over_ellpadicregulator": "1 + O(389^2)"}

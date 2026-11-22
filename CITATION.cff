@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use these programs or this check, please cite them as below, together with Stein and Wuthrich, Algorithms for the arithmetic of elliptic curves using Iwasawa theory, Math. Comp. 82 (2013)."
 type: software
-title: "Sha(389a1)[p^oo] = 0 at the supersingular primes below 6661"
-abstract: "For the rank-2 elliptic curve 389a1, Sha(E/Q)[p^oo] = 0 at the supersingular primes p = 107, 599, 1049, 2957, by Stein-Wuthrich's Algorithm 11.1 with Pollack's +/- p-adic L-functions computed from Mazur-Tate elements; with Stein-Wuthrich's Theorem 12.3 this covers every prime p < 6661 except 389. Two independently written programs, controls and red controls. A computational verification; it does not show that Sha is finite. Not yet peer reviewed."
+title: "Sha(389a1)[p^oo] = 0 for every prime p < 6661"
+abstract: "For the rank-2 elliptic curve 389a1, Sha(E/Q)[p^oo] = 0 at the supersingular primes p = 107, 599, 1049, 2957 (Stein-Wuthrich's Algorithm 11.1 with Pollack's +/- p-adic L-functions computed from Mazur-Tate elements) and at the split multiplicative prime 389 (exceptional zero, L-invariant, Schneider's height); with Stein-Wuthrich's Theorem 12.3 this covers every prime p < 6661. Two independently written programs, controls and red controls. A computational verification; it does not show that Sha is finite. Not yet peer reviewed."
 authors:
   - family-names: Canli
     given-names: Arhan

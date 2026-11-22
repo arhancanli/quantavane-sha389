@@ -1,0 +1,2 @@
+c3 implied by ellpadicbsd (SW norm): 355 + 151*389 + O(389^2)  mine: 355 mod 389
+S_pari = c3/((L/lg)Reg_gamma): 1 + O(389^2)

@@ -1,0 +1,1 @@
+{"curve": [0, -1, 1, -5, 6], "p": 37, "n": 5, "ellpadicbsd_r": 2, "ellpadicbsd_Lp": "27*37 + 28*37^2 + 5*37^3 + O(37^4)", "mine_R_times_Sha": "27*37 + 28*37^2 + 5*37^3 + O(37^4)", "ratio_pari_over_mine": "1 + O(37^3)", "Sha_estimate_pari": "1 + O(37^3)", "Sha_estimate_mine": "1 + O(37^3)"}

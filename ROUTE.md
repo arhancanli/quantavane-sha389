@@ -68,3 +68,32 @@ computations for conductor < 150 and p ≤ 19; 389a1 is out of that range); the 
 Burungale–Skinner–Tian–Wan section 1. Not read: Pollack 2003 itself; Sprung (Algebra Number Theory 2017);
 Balakrishnan–Müller–Stein (Math. Comp. 2016); later supersingular algorithm papers. A web search found no computation
 of Sha(389a)[p^∞] at a supersingular p. If you know of one, please tell us and we will credit it here.
+
+## 6. The bad prime p = 389 (split multiplicative)
+
+E has split multiplicative reduction at 389 (a_389 = +1, ord_389 Δ = 1, c_389 = 1).
+
+S1. SW Thm 7.3 (Kato's divisibility; split case): L_p(E, T) = f_E(T) d(T) with d in Λ and T | d(T). The extra T comes
+    from the Coleman map: in Kobayashi's *An elementary proof of the Mazur–Tate–Teitelbaum conjecture* (2006, section 4),
+    "Col(z)(0) = 0, namely, any Coleman power series Col(z)(X) for the Tate curve has a trivial zero at X = 0" (read).
+    Kato 2004 not re-read.
+S2. SW Thm 6.1 (Schneider, Perrin-Riou, Jones): ord f_E ≥ r, with equality iff the p-adic height is non-degenerate and
+    Sha(E/Q)(p) is finite; then the leading term of f_E has the valuation of (L/log_p κ(γ)) · ∏c_v · #Sha(p) · Reg_γ /
+    #E(Q)(p)², where L = log_p(q_E)/ord_p(q_E) is the L-invariant and κ(γ) = 1 + p.
+S3. The height (SW 4.2; Schneider 1982 with Werner's correction): ĥ_p(P) = 2 log_p(e(P)/σ_p(t(P))) − log_p(u)²/log_p(q_E).
+    PARI's form is ellpadicheight(E, p, n, P) · [1, −s₂ + 1/(log(q) u²)]; it reproduces SW's printed regulator and
+    L-invariant in their example 12.1 digit for digit. (SW's printed σ_p omits the constant C of ψ*(ω_E) = C du/u; PARI
+    includes it, and program B computes it.)
+S4. The measure at p ‖ N with a_p = 1 (SW section 3, MTT): μ(a + p^k Z_p) = α^−k [a/p^k]⁺ = [a/p^k]⁺. So
+    L_p ≡ Θ_n := Σ_{a ∈ (Z/pⁿ)ˣ} [a/pⁿ]⁺ (1 + T)^s(a) modulo (1 + T)^(p^(n−1)) − 1, whose T^j coefficient has valuation
+    n − 1 − v_p(j); hence [T^j] L_p ≡ [T^j] Θ_n (mod p^(n−1)) for 1 ≤ j < p. The symbol values are p-integral (all
+    generators checked: denominators divide 2).
+S5. ρ̄_389 is surjective: E is semistable with no rational 389-isogeny, so Serre 1972, Prop. 21 (not re-read) applies;
+    SW Prop. 7.2 lifts to ρ_389.
+
+Deduction. If c₃ := [T³] L_p is a unit: L_p = f_E · T · d₁ with d₁ in Λ (S1); ord_T L_p ≥ r + 1 = 3 (S1, S2) and
+c₃ ≠ 0 force ord f_E = 2 = r, so the height is non-degenerate and Sha(p) is finite (S2), and c₃ = f_E*(0) d₁(0) gives
+ord_p f_E* ≤ 0. Then ord_p #Sha(p) ≤ ord_p c₃ − ord_p(L/log_p(1 + p)) − Σ ord_p c_v − ord_p Reg_γ = 0 − 0 − 0 − 0.
+(SW's Algorithm 11.1 prints ord_p(L) where Thm 6.1 has L/log κ(γ); with ord_p(L) the bound would be negative whenever
+the leading coefficient is a unit, contradicting the divisibility, and SW's own example 12.1 (139 / (179 · 153 · 2) ≡ 1
+mod 223) fits Thm 6.1. We use the theorem.) Saturation of the basis at 389 also follows from v(Reg_γ) = 0.
